@@ -1,0 +1,301 @@
+*{
+margin: 0;
+padding: 0;
+
+}
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+#contenido {
+    width: 90%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+td {
+    color: #333;
+}
+
+thead {
+    font-size: 1.1em;
+}
+
+@media screen and (max-width: 600px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+    
+    th {
+        display: none;
+    }
+    
+    td {
+        position: relative;
+        padding-left: 50%;
+    }
+    
+    td:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 45%;
+        padding-left: 15px;
+        font-weight: bold;
+        white-space: nowrap;
+    }
+}
+
+
+
+header{
+    background-color: aquamarine;
+    text-align: center;
+    padding: 25px;
+    font-size: 25px;
+    
+}
+
+nav a{
+    text-decoration: none;
+    display: inline-block;
+    margin: 0 30px ;
+    color: black;
+    border-radius: 15px;
+    padding: 7px 18px;
+    
+    
+}
+
+nav a:hover{
+background-color: blue;
+color: bisque;
+}
+
+.portada{
+    background-image: url(./imagenes/imagen.jpg);
+    height: 500px;
+    background-size: cover; /* O ajusta el tamaño según  necesidades */
+    background-position: center;
+  
+}
+
+.portada p{
+   padding-top: 17%;
+   padding-left: 10%;
+   color:beige;
+   font-size: 20px;
+}
+
+.galeria{
+    margin-top: 10px;
+    display: grid;
+    grid-template-areas: 
+    " img1 img2  "
+    " img1 img3  "
+    
+    ;
+    align-items: center;
+}
+
+
+
+
+.fotolarga{
+    height: 600px;
+    width: 630px;
+    background-size: cover;
+    grid-area: img1;
+    
+}
+
+.fotopequeña1{
+    height: 300px;
+    width: 500px;
+    background-size: cover;
+    background-position: center;
+    grid-area: img2;
+    
+}
+
+.fotopequeña2{
+    height: 300px;
+    width: 500px;
+    background-size: cover;
+  
+    grid-area: img3;
+}
+
+
+footer{
+    margin-top: 40px;
+    background-color: aqua;
+    padding: 19px 10px;
+    display: flex;
+    gap: 70px;
+    justify-content: center;
+    align-items: center;
+  
+}
+
+.imagenfooter1{
+    height: 50px;
+    width: 50px;
+    border-radius: 30px;
+    
+}
+
+
+.servicios678{
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ width: 500px;
+gap: 80px;
+margin-top: 10px;
+}
+
+.botonesdeopcion{
+    width: 300px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 10px;
+    background-color: greenyellow;
+    border-radius: 20px;
+    
+    
+}
+
+.botonesdeopcion a {
+    background-color: aqua;
+    padding: 10px 15px;
+    border-radius: 17px;
+}
+
+
+
+.botonesdeopcion a{
+    text-decoration: none;
+    
+}
+  
+
+
+.imagenlabado{
+    width: 400px;
+    height: 400px;
+    background-size: cover;
+    border-radius: 30px;
+    
+}
+
+.imagenesservicios{
+    display: grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap: 30px;
+    width: 600px;
+}
+
+.imagenpeluqueria{
+    width: 400px;
+    height: 400px;
+    background-size: cover;
+    border-radius: 30px;
+    
+}
+
+
+.imagenherramienta{
+    width: 400px;
+    height: 400px;
+    background-size: cover;
+    border-radius: 30px;
+    
+}
+
+.formulario{
+    height: auto;
+    width: 400px;
+    background-color: rgb(127, 245, 245);
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 450px;
+    border-radius: 30px;
+    padding: 5px 20px;
+}
+
+.formulario input{
+    margin-top: 5px;
+    padding: 5px 3px;
+    text-align: center;
+   
+}
+
+.formulario p{
+    text-align: center;
+}
+
+.imputPeluqueria{
+    display: flex;
+    gap: 64px;
+}
+
+.imputPeluqueria1{
+    display: flex;
+    gap: 76px;
+}
+
+.imputPeluqueria2{
+    display: flex;
+    gap: 76px;
+}
+
+
+
+
