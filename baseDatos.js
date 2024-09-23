@@ -12,16 +12,25 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, '/')));
 
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, 'agendaCita.html'));
+    res.sendFile(path.join(__dirname, 'inicioSesion.html'));
 });
 
 
 let conection = mysql.createConnection({
     host: "127.0.0.1",
-    database: "animalesdatos",
+    database: "tablamascotas",
     user: "root",
     password: ""
 })
+
+
+let conectionUsuarios = mysql.createConnection({
+  host: "127.0.0.1",
+  database: "loginusuario",
+  user: "root",
+  password: ""
+})
+
 
 
 
@@ -30,17 +39,11 @@ let conection = mysql.createConnection({
 app.post("/enviar", (req, res) => {
     let datos = req.body
 
-    let cedu = datos.ced
-    let nomApell = datos.nomApe
-    let telefono = datos.tele
-    let email = datos.email
+    let fechHo = datos.fechHo
     let servicio = datos.serv
-    let contra = datos.contra
-    let horaFecha = format(new Date(), "yyyy-MM-dd hh:mm:ss a")
-
-
-
-    let registar = "INSERT INTO animales(cedula ,nombre_apellidos, telefono,correo,servicios,contrasena , fecha_hora)VALUES('" + cedu + "','" + nomApell + "','" + telefono + "','" + email + "','" + servicio + "','" + contra + "' , '" +horaFecha + "')";
+    let razaMa = datos.razaMa
+    
+    let registar = "INSERT INTO mascotas(servicio ,fecha_hora,raza_mascota)VALUES('" + servicio + "','" + fechHo + "','" + razaMa + "')";
 
 
     conection.query(registar, function (error , results) {
@@ -58,10 +61,36 @@ app.post("/enviar", (req, res) => {
 })
 
 
+app.post("/session", (req, res) => {
+  let datos = req.body
+
+  let correo = datos.correo
+  let contraseña = datos.contraseña
+  let nombreApelli = datos.nombre_apellidos
+  let telefono = datos.telefono
+  
+  let registar = "INSERT INTO usuario(correo,contraseina,nomApelli,telefono)VALUES('" + correo + "','" + contraseña + "','" + nombreApelli + "' ,'" + telefono + "')";
+
+
+  conectionUsuarios.query(registar, function (error , results) {
+      if (error) {
+          res.send("error envia datos")
+          throw error;
+      } else {
+
+          console.log("datos almacenados correctamente")
+          console.log(results)
+          res.send({data : results})
+          
+      }
+  })
+})
+
+
 app.get("/traer", (req, res) => {
   
 
-    let consulta = "SELECT * FROM animales";
+    let consulta = "SELECT * FROM mascotas";
   
     conection.query( consulta, function (error, results) {
       if (error) {

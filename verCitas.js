@@ -13,11 +13,8 @@ fetch("/traer")
 
             // Rellena cada celda de la fila con los datos correspondientes
             fila.innerHTML = `
-                <td>${element.cedula}</td>
-                <td>${element.nombre_apellidos}</td>
-                <td>${element.telefono}</td>
-                <td>${element.correo}</td>
-                <td>${element.servicios}</td>
+                <td>${element.servicio}</td>
+                <td>${element.raza_mascota}</td>
                 <td>${element.fecha_hora}</td>
             `;
 

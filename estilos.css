@@ -4,6 +4,41 @@ padding: 0;
 
 }
 
+.inicio{
+    background-color: #e95757;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 350px;
+    height: 500px;
+    border-radius: 10px;
+
+}
+
+.campo{
+    height: 35px;
+    width: 260px;
+}
+
+.btnE{
+    height: 30px;
+    width: 80px; 
+    background-color: #daec56;
+    font-size: 17px;
+    border-radius: 10px;
+    border: 2px solid #daec56;
+}
+
+
+
+.inicioBody{
+     height: 50vw; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #84e787;
+}
 
 
 body {
@@ -251,35 +286,42 @@ margin-top: 10px;
     border-radius: 30px;
     
 }
+.inputtext{
+    height: 30px;
+    width: 80%;
+}
+
+.centrar{
+    height: 40px;
+    width: 80px;
+    background-color: #daec56;
+    font-size: 17px;
+    border: 2px solid #daec56 ;
+    border-radius: 10px;
+}
 
 .formulario{
-    height: auto;
-    width: 400px;
-    background-color: rgb(127, 245, 245);
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 10px;
+    margin-top: 20px;
+    background-color: #e95757;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 450px;
+    height: 460px;
+    border-radius: 10px;
+
+
+}
+
+.mover{
+    width: 100%;
     display: flex;
     align-content: center;
     justify-content: center;
-    flex-direction: column;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    margin-left: 450px;
-    border-radius: 30px;
-    padding: 5px 20px;
+    height: 480px;
 }
 
-.formulario input{
-    margin-top: 5px;
-    padding: 5px 3px;
-    text-align: center;
-   
-}
-
-.formulario p{
-    text-align: center;
-}
 
 .imputPeluqueria{
     display: flex;

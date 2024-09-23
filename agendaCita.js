@@ -7,25 +7,21 @@ formulario.addEventListener("submit" , (e) => {
 
 e.preventDefault()
 
-let ced = document.getElementById("ced").value;
-let nomApe = document.getElementById("nomApe").value;
-let tele = document.getElementById("tele").value;
-let email = document.getElementById("email").value;
+let fechHo  = document.getElementById("fechHo").value
+let razaMa = document.getElementById("razaMa").value
 let serv = document.getElementById("serv").value;
-let contra = document.getElementById("contra").value;
+
 
 let data = {
-    ced,
-    nomApe : nomApe,
-    tele,
-    email,
     serv,
-    contra
+    fechHo,
+    razaMa
+
 };
-console.log(nomApe)
+
  
     fetch('/enviar', {
-        method: 'POST', // Tipo de solicitud
+        method: 'POST', 
         headers: {
             'Content-Type': 'application/json' // Indicamos que el cuerpo será JSON
         },
@@ -37,4 +33,6 @@ console.log(nomApe)
     .catch((error) => {
         console.error('Error:', error);
     });
+
+    window.location.href = 'index.html';
 })
