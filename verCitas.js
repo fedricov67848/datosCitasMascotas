@@ -16,10 +16,13 @@ fetch("/traer")
                 <td>${element.servicio}</td>
                 <td>${element.raza_mascota}</td>
                 <td>${element.fecha_hora}</td>
+                <td>${element.user}</td>
             `;
 
-            // Añade la fila al cuerpo de la tabla
             tablaCitas.appendChild(fila);
         });
     })
     .catch(error => console.error("Error al traer los datos:", error));
+
+
+

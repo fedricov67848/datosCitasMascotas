@@ -30,7 +30,6 @@ fetch('/session', {
     console.error('Error:', error);
 });
 
-window.location.href = 'verCitas.html';
-
+window.location.href = 'index.html';
 
 })

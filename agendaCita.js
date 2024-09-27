@@ -1,7 +1,17 @@
 let formulario = document.querySelector(".formulario")
+let user;
 
-
-
+fetch("/obtener")
+.then(response => response.json())
+.then(data => {
+    console.log(data);
+     
+    data.data.forEach(element => {
+         user = element.nomApelli
+    
+    });
+})
+.catch(error => console.error("Error al traer los datos:", error));
 
 formulario.addEventListener("submit" , (e) => {
 
@@ -15,8 +25,8 @@ let serv = document.getElementById("serv").value;
 let data = {
     serv,
     fechHo,
-    razaMa
-
+    razaMa,
+    nombre : user
 };
 
  
@@ -34,5 +44,5 @@ let data = {
         console.error('Error:', error);
     });
 
-    window.location.href = 'index.html';
+    window.location.href = 'verCitas.html';
 })
